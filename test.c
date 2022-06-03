@@ -5,9 +5,23 @@
 
 
 int main(void){
-    int array[9] = {4,2,7,5,9,3,1,};
-    int logicSize = 7;
-    char text[] = "mensajito";
+    int array[12] = {5,4,2,7,5,5,9,3,1,5};
+    int logicSize = 10;
+
+    /* 
+    logicSize = fixedDelete(array, logicSize, 5);
+    for(int i = 0; i < logicSize; i++){
+        printf("%d ", array[i]);
+    }
+    printf("\n%d\n", logicSize);
+    */
+
+    char text[] = "holaaloh"; 
+    int logicSizeText = 8;
+    int holaaloh = isPalindrome(text, logicSizeText);
+    printf("%d", holaaloh);
+    
+    /* 
     //calculando tamaño lógico
     int n = sizeof(text); // = 10 becouse it count the end caracter "\0"
     int m = sizeof(array)/sizeof(int); //tamaño físico de text[]
@@ -23,7 +37,8 @@ int main(void){
     for(int i = 0; i < logicSize; i++){
         printf("%d ", array[i]);
     }
-    printf("\n%d\n", logicSize);
+    printf("\n%d\n", logicSize); 
+    */
 
     return 0;
 }

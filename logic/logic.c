@@ -13,6 +13,36 @@ int insertEn(int arr[], int logicSize, int element, int position){
     }
     return logicSize;
 }
+int isPalindrome(char arr[], int logicSize){
+    int i = 0;
+    int j = logicSize - 1;
+    int result = 1;
+    while(i < j && result == 1){
+        if(arr[i] == arr[j]){
+            i++;
+            j--;
+        } else {
+            result = 0;
+        }
+    }
+    return result;
+}
+int fixedDelete(int arr[], int logicSize, int element){
+    int position = find(arr, logicSize, element);
+    int deleted = 1;
+    if(position != -1){
+        for(int i = position; i < logicSize - 1; i++){
+            if(element != arr[i + deleted]){
+                arr[i] = arr[i + deleted];
+            } else {
+                deleted++;
+                i--;
+            }
+        }
+    }
+    return logicSize - deleted;
+
+}
 int deleteEn(int arr[], int logicSize, int element){
     int position = find(arr, element, logicSize);
         int deleted = 1;
@@ -31,7 +61,7 @@ int deleteEn(int arr[], int logicSize, int element){
     }
     return logicSize - deleted;
 }
-int find(int arr[], int element, int logicSize){
+int find(int arr[], int logicSize, int element){
     bool found = false;    
     int i = 0;
     while(i < logicSize && !found){
